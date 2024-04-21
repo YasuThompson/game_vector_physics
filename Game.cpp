@@ -24,6 +24,12 @@ Game::Game()
 	
 }
 
+
+const int window_height = 1024;
+const int window_width = 768;
+
+
+
 bool Game::Initialize()
 {
 	if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) != 0)
@@ -32,7 +38,7 @@ bool Game::Initialize()
 		return false;
 	}
 	
-	mWindow = SDL_CreateWindow("Game Programming in C++ (Chapter 3)", 100, 100, 1024, 768, 0);
+	mWindow = SDL_CreateWindow("Game Programming in C++ (Chapter 3)", 100, 100, window_height, window_width, 0);
 	if (!mWindow)
 	{
 		SDL_Log("Failed to create window: %s", SDL_GetError());
