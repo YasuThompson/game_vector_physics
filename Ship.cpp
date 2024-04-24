@@ -52,8 +52,17 @@ void Ship::UpdateActor(float deltaTime)
             SetState(EDead);
             ast->SetState(EDead);
             
+            // Create a laser and set its position/rotation to mine
+            Ship* mShip = new Ship(GetGame());
+            mShip->SetPosition(Vector2(512.0f, 384.0f));
+            mShip->SetRotation(Math::PiOver2);
+            
+            
             break;
         }
+        
+//        game->LoadShip();
+        
     }
     
 }
